@@ -50,25 +50,24 @@ favicon:
 # Show multilingual switcher in footer.
 language_switcher: false
 
-footer:  # 底部信息区
-  since: 2020  # 建站时间
+footer:
+  # Specify the date when the site was setup. If not defined, current year will be used.
+  #since: 2015
+
+  # Icon between year and copyright info.
   icon:
-    name: heart   # 图标名称
-    animated: true   # 开启动画
-    color: "#ff0000"   # 图标颜色
-
-  powered:
-    enable: true  # 显示由 Hexo 强力驱动
-    version: false  # 隐藏 Hexo 版本号
-
-  theme:
-    enable: true  # 显示所用的主题名称
-    version: false  # 隐藏主题版本号
+    # Icon name in Font Awesome. See: https://fontawesome.com/icons
+    name: fa fa-heart
+    # If you want to animate the icon, set it to true.
+    animated: false
+    # Change the color of icon, using Hex Code.
+    color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: RayQ
-  
+  copyright:
 
+  # Powered by Hexo & NexT
+  powered: true
 
   # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
@@ -92,10 +91,6 @@ creative_commons:
   post: false
   language:
 
-
-auto_excerpt:
-enable: true  # 开启自动摘要提取
-length: 150
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -413,35 +408,43 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: true
+  enable: false
 
-  # 外链字体库地址，例如 //fonts.googleapis.com (默认值)
+  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
 
-  # 全局字体，应用在 body 元素上
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+  # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Monda
+    family: Lato
+    size:
 
-# 标题字体 (h1, h2, h3, h4, h5, h6)
+  # Font settings for site title (.site-title).
+  title:
+    external: true
+    family:
+    size:
+
+  # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
-    family: Roboto Slab
+    family:
+    size:
 
-# 文章字体
+  # Font settings for posts (.post-body).
   posts:
     external: true
     family:
 
-# Logo 字体
-  logo:
+  # Font settings for <code> and code blocks.
+  codes:
     external: true
     family:
-
-# 代码字体，应用于 code 以及代码块
-codes:
-  external: true
-  family:
 
 
 # ---------------------------------------------------------------
@@ -608,8 +611,8 @@ changyan:
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
   enable: true
-  appid: Flma1o8gdrDztDPxDFEkcLsG-MdYXbMMI# Your leancloud application appid
-  appkey: lY6SBcGNAkoThGdBRD06kmxX# Your leancloud application appkey
+  appid: Flma1o8gdrDztDPxDFEkcLsG-MdYXbMMI # Your leancloud application appid
+  appkey: lY6SBcGNAkoThGdBRD06kmxX # Your leancloud application appkey
   notify: false # Mail notifier
   verify: true # Verification code
   placeholder: Just go go # Comment box placeholder
@@ -618,7 +621,7 @@ valine:
   pageSize: 10 # Pagination size
   language: # Language, available values: en, zh-cn
   visitor: false # Article reading statistic
-  comment_count: false # If false, comment count will only be displayed in post page, not in home page
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
@@ -722,6 +725,8 @@ busuanzi_count:
 # See: https://theme-next.org/docs/third-party-services/search-services
 # ---------------------------------------------------------------
 
+
+
 # Algolia Search
 # For more information: https://www.algolia.com
 algolia_search:
@@ -736,7 +741,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto

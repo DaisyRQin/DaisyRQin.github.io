@@ -1,5 +1,5 @@
 ---
-title: about
+title: About
 type: about
 toc: true
 mathjax: true
