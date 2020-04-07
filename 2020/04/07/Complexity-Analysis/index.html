@@ -20,30 +20,35 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Think global, Fit locally.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QRのBlog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="时间复杂度 | Time AnalysisBig $O$ notation$O(1)$: Constant complexity $O(\log n)$: Logarithmic complexity $O(n)$: Linear complexity $O(n^2)$: $n$ square complexity $O(n^3)$: $n$ cubic complexity $O(2^n)$:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comlexity Analysis">
+<meta property="og:url" content="http://yoursite.com/2020/04/07/Complexity-Analysis/index.html">
 <meta property="og:site_name" content="QRのBlog">
-<meta property="og:description" content="Think global, Fit locally.">
+<meta property="og:description" content="时间复杂度 | Time AnalysisBig $O$ notation$O(1)$: Constant complexity $O(\log n)$: Logarithmic complexity $O(n)$: Linear complexity $O(n^2)$: $n$ square complexity $O(n^3)$: $n$ cubic complexity $O(2^n)$:">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-07T09:24:19.000Z">
+<meta property="article:modified_time" content="2020-04-07T09:45:55.994Z">
 <meta property="article:author" content="Ray">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Geekbang Course">
+<meta property="article:tag" content="Interview Preparation">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/04/07/Complexity-Analysis/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>QRのBlog</title>
+  <title>Comlexity Analysis | QRのBlog</title>
   
 
 
@@ -185,9 +190,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -203,10 +209,9 @@
       <meta itemprop="name" content="QRのBlog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/07/Complexity-Analysis/" class="post-title-link" itemprop="url">Comlexity Analysis</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Comlexity Analysis
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -257,7 +262,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="时间复杂度-Time-Analysis"><a href="#时间复杂度-Time-Analysis" class="headerlink" title="时间复杂度 | Time Analysis"></a>时间复杂度 | Time Analysis</h2><h3 id="Big-O-notation"><a href="#Big-O-notation" class="headerlink" title="Big $O$ notation"></a>Big $O$ notation</h3><p>$O(1)$: Constant complexity</p>
+        <h2 id="时间复杂度-Time-Analysis"><a href="#时间复杂度-Time-Analysis" class="headerlink" title="时间复杂度 | Time Analysis"></a>时间复杂度 | Time Analysis</h2><h3 id="Big-O-notation"><a href="#Big-O-notation" class="headerlink" title="Big $O$ notation"></a>Big $O$ notation</h3><p>$O(1)$: Constant complexity</p>
 <p>$O(\log n)$: Logarithmic complexity</p>
 <p>$O(n)$: Linear complexity</p>
 <p>$O(n^2)$: $n$ square complexity</p>
@@ -302,107 +307,42 @@ y = \frac{n(n+1)}{2}</script><p>This block of code has the time complexity of $O
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>时间复杂度：看在 $n$ 的不同情况下，一段主要代码被运行了多少次，或看节点被访问了多少次。</p>
 <p>空间复杂度：看数组的长度，和递归的深度。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Geekbang-Course/" rel="tag"># Geekbang Course</a>
+              <a href="/tags/Interview-Preparation/" rel="tag"># Interview Preparation</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ray">
-      <meta itemprop="description" content="Think global, Fit locally.">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QRのBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/06/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-06 21:13:46" itemprop="dateCreated datePublished" datetime="2020-04-06T21:13:46+01:00">2020-04-06</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/06/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/06/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/06/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -449,6 +389,7 @@ y = \frac{n(n+1)}{2}</script><p>This block of code has the time complexity of $O
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度-Time-Analysis"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度 | Time Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Big-O-notation"><span class="nav-number">1.1.</span> <span class="nav-text">Big $O$ notation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sum-up-with-iteration"><span class="nav-number">1.2.1.</span> <span class="nav-text">sum up with iteration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sum-up-with-the-formula"><span class="nav-number">1.2.2.</span> <span class="nav-text">sum up with the formula</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题-1"><span class="nav-number">2.1.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接用递归"><span class="nav-number">2.1.1.</span> <span class="nav-text">直接用递归</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mater-Theorem-主定理"><span class="nav-number">2.2.</span> <span class="nav-text">Mater Theorem 主定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-search"><span class="nav-number">2.2.1.</span> <span class="nav-text">Binary search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-tree-traversal"><span class="nav-number">2.2.2.</span> <span class="nav-text">Binary tree traversal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optimal-sorted-matrix-search"><span class="nav-number">2.2.3.</span> <span class="nav-text">Optimal sorted matrix search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-sort"><span class="nav-number">2.2.4.</span> <span class="nav-text">Merge sort</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见复杂度问题"><span class="nav-number">2.3.</span> <span class="nav-text">常见复杂度问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树遍历：前序，中序，后序时间复杂度是多少"><span class="nav-number">2.3.1.</span> <span class="nav-text">二叉树遍历：前序，中序，后序时间复杂度是多少</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的遍历"><span class="nav-number">2.3.2.</span> <span class="nav-text">图的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搜索算法：DFS，BFS的时间复杂度"><span class="nav-number">2.3.3.</span> <span class="nav-text">搜索算法：DFS，BFS的时间复杂度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度"><span class="nav-number">3.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
