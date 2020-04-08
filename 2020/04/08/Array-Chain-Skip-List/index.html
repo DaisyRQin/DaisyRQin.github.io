@@ -20,30 +20,35 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Think global, Fit locally.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QRのBlog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Array泛型：任何一个单元类型都可以放进去。 数组：在内存中开辟了一段连续的地址。访问第一个和其中任何一个元素的时间复杂度都是一样的 $O(1)$，数组访问速度比较快。  Inserting：插入元素平均要挪动一半的元素位置，$O(n)$ 的时间复杂度。 Deleting：删除一处元素后要清理内存（自动 or 手动管理） Look up：$O(1)$. Linked List &#x2F; Chain对于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array, Chain, Skip List">
+<meta property="og:url" content="http://yoursite.com/2020/04/08/Array-Chain-Skip-List/index.html">
 <meta property="og:site_name" content="QRのBlog">
-<meta property="og:description" content="Think global, Fit locally.">
+<meta property="og:description" content="Array泛型：任何一个单元类型都可以放进去。 数组：在内存中开辟了一段连续的地址。访问第一个和其中任何一个元素的时间复杂度都是一样的 $O(1)$，数组访问速度比较快。  Inserting：插入元素平均要挪动一半的元素位置，$O(n)$ 的时间复杂度。 Deleting：删除一处元素后要清理内存（自动 or 手动管理） Look up：$O(1)$. Linked List &#x2F; Chain对于">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-08T19:28:30.000Z">
+<meta property="article:modified_time" content="2020-04-08T21:20:20.211Z">
 <meta property="article:author" content="Ray">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Geekbang Course">
+<meta property="article:tag" content="Interview Preparation">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/04/08/Array-Chain-Skip-List/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>QRのBlog</title>
+  <title>Array, Chain, Skip List | QRのBlog</title>
   
 
 
@@ -185,9 +190,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -203,10 +209,9 @@
       <meta itemprop="name" content="QRのBlog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/Array-Chain-Skip-List/" class="post-title-link" itemprop="url">Array, Chain, Skip List</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Array, Chain, Skip List
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -257,7 +262,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>泛型：任何一个单元类型都可以放进去。</p>
+        <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>泛型：任何一个单元类型都可以放进去。</p>
 <p>数组：在内存中开辟了一段连续的地址。访问第一个和其中任何一个元素的时间复杂度都是一样的 $O(1)$，数组访问速度比较快。</p>
 <p> Inserting：插入元素平均要挪动一半的元素位置，$O(n)$ 的时间复杂度。</p>
 <p>Deleting：删除一处元素后要清理内存（自动 or 手动管理）</p>
@@ -299,236 +304,42 @@
 <li>看别人的解法</li>
 </ol>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Geekbang-Course/" rel="tag"># Geekbang Course</a>
+              <a href="/tags/Interview-Preparation/" rel="tag"># Interview Preparation</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/Complexity-Analysis/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ray">
-      <meta itemprop="description" content="Think global, Fit locally.">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QRのBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/07/Complexity-Analysis/" class="post-title-link" itemprop="url">Comlexity Analysis</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-07 10:24:19 / Modified: 10:45:55" itemprop="dateCreated datePublished" datetime="2020-04-07T10:24:19+01:00">2020-04-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/07/Complexity-Analysis/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Complexity-Analysis/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="时间复杂度-Time-Analysis"><a href="#时间复杂度-Time-Analysis" class="headerlink" title="时间复杂度 | Time Analysis"></a>时间复杂度 | Time Analysis</h2><h3 id="Big-O-notation"><a href="#Big-O-notation" class="headerlink" title="Big $O$ notation"></a>Big $O$ notation</h3><p>$O(1)$: Constant complexity</p>
-<p>$O(\log n)$: Logarithmic complexity</p>
-<p>$O(n)$: Linear complexity</p>
-<p>$O(n^2)$: $n$ square complexity</p>
-<p>$O(n^3)$: $n$ cubic complexity</p>
-<p>$O(2^n)$: Exponential complexity</p>
-<p>$O(n!)$: Factorial</p>
-<p>Note: we only care about the most complex calculation</p>
-<p>小技巧：直接看这段函数，或者看这段代码根据 $n$ 的不同情况运行了多少次</p>
-<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>Calculation: $1+2+\dots+n$</p>
-<h4 id="sum-up-with-iteration"><a href="#sum-up-with-iteration" class="headerlink" title="sum up with iteration"></a>sum up with iteration</h4><figure class="highlight python"><figcaption><span>sum up with iteration</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		y = y + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>This block of code has the time complexity of $O(n)$.</p>
-<h4 id="sum-up-with-the-formula"><a href="#sum-up-with-the-formula" class="headerlink" title="sum up with the formula"></a>sum up with the formula</h4><script type="math/tex; mode=display">
-y = \frac{n(n+1)}{2}</script><p>This block of code has the time complexity of $O(1)$, because this line of code will only be executed once.</p>
-<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>找出递归状态的递归树。</p>
-<h3 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h3><p>Fib: $0, 1, 1, 2, 3, 5, 8, 13, 21, \dots$</p>
-<p>$F(n) = F(n-1) + F(n-2)$. </p>
-<p>Calculation: Find $F(n)$</p>
-<h4 id="直接用递归"><a href="#直接用递归" class="headerlink" title="直接用递归"></a>直接用递归</h4><figure class="highlight java"><figcaption><span>using recursion directly</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> n</span><br><span class="line">	<span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Analysis: take $n=6$, find out how this code execute.</p>
-<p>每展开一层，下面的节点树是下面的两倍</p>
-<p>可以看出来状态数中有很多节点被重复计算。</p>
-<p>直接用递归的时间复杂度为 $O(2^n)$</p>
-<p>建议：用缓存存中间结果，或者直接用循环</p>
-<h3 id="Mater-Theorem-主定理"><a href="#Mater-Theorem-主定理" class="headerlink" title="Mater Theorem 主定理"></a>Mater Theorem 主定理</h3><p>用来计算递归的时间复杂度</p>
-<h4 id="Binary-search"><a href="#Binary-search" class="headerlink" title="Binary search"></a>Binary search</h4><p>二分查找，一个数列本身有序，一分为二，只查一边 </p>
-<p>$O(\log n)$</p>
-<h4 id="Binary-tree-traversal"><a href="#Binary-tree-traversal" class="headerlink" title="Binary tree traversal"></a>Binary tree traversal</h4><p>二叉树遍历，每次一分为二，每一遍时间复杂度相等</p>
-<p>二叉树遍历，每个节点都访问一次，且仅访问一次</p>
-<p>$O(n)$</p>
-<h4 id="Optimal-sorted-matrix-search"><a href="#Optimal-sorted-matrix-search" class="headerlink" title="Optimal sorted matrix search"></a>Optimal sorted matrix search</h4><p>在排好序的二维矩阵中进行二分查找</p>
-<p>$O(n)$</p>
-<h4 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a>Merge sort</h4><p>归并排序</p>
-<p>所有排序最优的办法就是 $O(n\log n)$</p>
-<h3 id="常见复杂度问题"><a href="#常见复杂度问题" class="headerlink" title="常见复杂度问题"></a>常见复杂度问题</h3><h4 id="二叉树遍历：前序，中序，后序时间复杂度是多少"><a href="#二叉树遍历：前序，中序，后序时间复杂度是多少" class="headerlink" title="二叉树遍历：前序，中序，后序时间复杂度是多少"></a>二叉树遍历：前序，中序，后序时间复杂度是多少</h4><p>$O(n)$</p>
-<p>每个二叉树节点仅访问一次，时间复杂度线性于节点总数。</p>
-<h4 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h4><p>$O(n)$</p>
-<p>每个图节点仅访问一次，时间复杂度线性于图节点数</p>
-<h4 id="搜索算法：DFS，BFS的时间复杂度"><a href="#搜索算法：DFS，BFS的时间复杂度" class="headerlink" title="搜索算法：DFS，BFS的时间复杂度"></a>搜索算法：DFS，BFS的时间复杂度</h4><p>DFS: 深度优先； BFS: 广度优先</p>
-<p>$O(n)$</p>
-<p>因为访问的节点只有一次。$n$ 是搜索空间中的节点总数。</p>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>主要看数组的长度，和递归的深度。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>时间复杂度：看在 $n$ 的不同情况下，一段主要代码被运行了多少次，或看节点被访问了多少次。</p>
-<p>空间复杂度：看数组的长度，和递归的深度。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/07/Complexity-Analysis/" rel="prev" title="Comlexity Analysis">
+      <i class="fa fa-chevron-left"></i> Comlexity Analysis
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ray">
-      <meta itemprop="description" content="Think global, Fit locally.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QRのBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/06/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-06 21:13:46" itemprop="dateCreated datePublished" datetime="2020-04-06T21:13:46+01:00">2020-04-06</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/04/06/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/06/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -575,6 +386,7 @@ y = \frac{n(n+1)}{2}</script><p>This block of code has the time complexity of $O
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linked-List-Chain"><span class="nav-number">2.</span> <span class="nav-text">Linked List &#x2F; Chain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Skip-List"><span class="nav-number">3.</span> <span class="nav-text">Skip List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目解析"><span class="nav-number">4.</span> <span class="nav-text">题目解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">4.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Move-zeros"><span class="nav-number">4.2.</span> <span class="nav-text">Move-zeros</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目"><span class="nav-number">4.2.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">4.2.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明"><span class="nav-number">4.2.3.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解题过程与思路"><span class="nav-number">4.2.4.</span> <span class="nav-text">解题过程与思路</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -699,59 +511,6 @@ y = \frac{n(n+1)}{2}</script><p>This block of code has the time complexity of $O
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
