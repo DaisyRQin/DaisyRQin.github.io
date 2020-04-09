@@ -10,3 +10,8 @@ categories:
 comments: false
 ---
 
+## Myself
+
+Hey, it is Ray here, a PhD student in Computer Science department. 
+
+非典型的 CS 博士生，Data visualization 方向，不擅编程，不擅数学。

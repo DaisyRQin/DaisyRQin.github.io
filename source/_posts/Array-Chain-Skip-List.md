@@ -9,6 +9,8 @@ categories:
 - Coding
 - Algorithm
 summary:
+toc: true
+mathjax: true
 ---
 
 ## Array
