@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Array, Chain, Skip List</title>
+    <url>/2020/04/08/Array-Chain-Skip-List/</url>
+    <content><![CDATA[<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>泛型：任何一个单元类型都可以放进去。</p>
+<p>数组：在内存中开辟了一段连续的地址。访问第一个和其中任何一个元素的时间复杂度都是一样的 $O(1)$，数组访问速度比较快。</p>
+<p> Inserting：插入元素平均要挪动一半的元素位置，$O(n)$ 的时间复杂度。</p>
+<p>Deleting：删除一处元素后要清理内存（自动 or 手动管理）</p>
+<p>Look up：$O(1)$.</p>
+<h2 id="Linked-List-Chain"><a href="#Linked-List-Chain" class="headerlink" title="Linked List / Chain"></a>Linked List / Chain</h2><p>对于添加删除操作比较频繁的情况下，比较好用。</p>
+<p>每一个元素用 class 来定义，被称为 Node。</p>
+<p>每一个 Node 有 Value 和 Next Pointer。单链表 / 双向链表。</p>
+<p>头指针：head</p>
+<p>尾指针：tail</p>
+<p>如果 tail 的 next 指针指向 head，则为循环列表。</p>
+<p>Inserting：New Node; 更改 next 指针。$O(1)$ 的操作。</p>
+<p>Deleting：前驱 next 指针指向后继 Node。</p>
+<p>难以访问，必须从头节点挪到某个特殊节点，$O(n)$ 的操作。</p>
+<h2 id="Skip-List"><a href="#Skip-List" class="headerlink" title="Skip List"></a>Skip List</h2><p>在链表的基础上发展而来。</p>
+<p><strong>只能用于元素有序的情况</strong>，对标的是平衡树和二分查找，是一种 插入/删除/搜索 都是 $O(\log n)$ 的数据结构。</p>
+<p>添加第一级索引 —— 增加一个维度，索引指向 next+1 的元素。</p>
+<p>可以再增加第二级索引。等等多级索引。</p>
+<p>$O(\log n)$ 的查询时间复杂度: 索引的高度为 $\log(n)$. 每层索引遍历的结点个数为 $3$。</p>
+<p>维护成本高，增加或者删除都会更改索引。</p>
+<p>空间复杂度：$O(n)$</p>
+<h2 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>5-10 分钟，读题和思考</li>
+<li>有思路：自己开始写代码；不然，马上看题解</li>
+<li>默写背诵题解，到熟练</li>
+<li>之后开始自己写，闭卷写</li>
+</ol>
+<h3 id="Move-zeros"><a href="#Move-zeros" class="headerlink" title="Move-zeros"></a>Move-zeros</h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给定一个数组 <code>nums</code>，编写一个函数将所有 $0$ 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">输入: [0,1,0,3,12]</span><br><span class="line">输出: [1,3,12,0,0]</span><br></pre></td></tr></table></figure>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ol>
+<li>必须在原数组上操作，不能拷贝额外的数据</li>
+<li>尽量减少操作次数</li>
+</ol>
+<h4 id="解题过程与思路"><a href="#解题过程与思路" class="headerlink" title="解题过程与思路"></a>解题过程与思路</h4><ol>
+<li>Loop, count the number of zero</li>
+<li>new array, loop, 两个指针，非零往前放，0往后放</li>
+<li>直接在数组中进行 index 操作，loop 中记录非零元素的位置</li>
+<li>注意测试特殊情况</li>
+<li>五遍刷题法</li>
+<li>看别人的解法</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>Geekbang Course</tag>
+        <tag>Interview Preparation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Binary Tree</title>
+    <url>/2020/04/09/Binary-Tree/</url>
+    <content><![CDATA[<h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><p>链表是特殊化的树，树是特殊化的图</p>
+<p>对比链表，树是一种二维的结构</p>
+<p>Root; Parent Node; Child Node</p>
+<p>Binary Tree</p>
+<p>递归树</p>
+<h2 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h2><p>$O(n)$ 的算法复杂度</p>
+<p>前序 ( Pre-order) ：根-左-右</p>
+<p>中序 (In-order) ：左-根-右</p>
+<p>后序 (Post-order) ：左-右-根</p>
+<p>基于递归遍历，因为没法有效地循环</p>
+<h2 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h2><p>Also called as Ordered Binary Tree, Sorted Binary Tree.</p>
+<p>空树也是二叉搜索树</p>
+<p>Defined as:</p>
+<ul>
+<li>左子树的 <strong>所有结点</strong> 的值小于它的根节点的值</li>
+<li>右子树的 <strong>所有结点</strong> 的值大于它的根节点的值</li>
+</ul>
+<p>左、右子树也分别为二叉查找树（所谓 重复性）</p>
+<p>中序遍历：升序排列</p>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><p>$O(\log n)$</p>
+<p>每次都可以筛掉一半的结点</p>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><p>$O(\log n)$</p>
+<p>查询没有找到的话，最后到达的位置就是这个结点应该在的位置，所以和查询有着相同的时间复杂度。</p>
+<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>不断调用插入操作</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>$O(\log n)$</p>
+<p>如果是叶子结点：则直接删除即可</p>
+<p>若删除的是根结点或者是某一个重要结点：找一个和根结点最接近的作为根结点，把它替换。常用是找第一个大于它的结点，用来替换。</p>
+<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>树退化成了一个链表，则时间复杂度变高。</p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>递归算法：左-根-右；分别递归调用不同的结点。</p>
+<p>递归本身没有效率差别问题，只要算法复杂度没有问题就可。</p>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>Geekbang Course</tag>
+        <tag>Interview Preparation</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Comlexity Analysis</title>
     <url>/2020/04/07/Complexity-Analysis/</url>
     <content><![CDATA[<h2 id="时间复杂度-Time-Analysis"><a href="#时间复杂度-Time-Analysis" class="headerlink" title="时间复杂度 | Time Analysis"></a>时间复杂度 | Time Analysis</h2><h3 id="Big-O-notation"><a href="#Big-O-notation" class="headerlink" title="Big $O$ notation"></a>Big $O$ notation</h3><p>$O(1)$: Constant complexity</p>
@@ -71,60 +170,5 @@ y = \frac{n(n+1)}{2}</script><p>This block of code has the time complexity of $O
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Array, Chain, Skip List</title>
-    <url>/2020/04/08/Array-Chain-Skip-List/</url>
-    <content><![CDATA[<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>泛型：任何一个单元类型都可以放进去。</p>
-<p>数组：在内存中开辟了一段连续的地址。访问第一个和其中任何一个元素的时间复杂度都是一样的 $O(1)$，数组访问速度比较快。</p>
-<p> Inserting：插入元素平均要挪动一半的元素位置，$O(n)$ 的时间复杂度。</p>
-<p>Deleting：删除一处元素后要清理内存（自动 or 手动管理）</p>
-<p>Look up：$O(1)$.</p>
-<h2 id="Linked-List-Chain"><a href="#Linked-List-Chain" class="headerlink" title="Linked List / Chain"></a>Linked List / Chain</h2><p>对于添加删除操作比较频繁的情况下，比较好用。</p>
-<p>每一个元素用 class 来定义，被称为 Node。</p>
-<p>每一个 Node 有 Value 和 Next Pointer。单链表 / 双向链表。</p>
-<p>头指针：head</p>
-<p>尾指针：tail</p>
-<p>如果 tail 的 next 指针指向 head，则为循环列表。</p>
-<p>Inserting：New Node; 更改 next 指针。$O(1)$ 的操作。</p>
-<p>Deleting：前驱 next 指针指向后继 Node。</p>
-<p>难以访问，必须从头节点挪到某个特殊节点，$O(n)$ 的操作。</p>
-<h2 id="Skip-List"><a href="#Skip-List" class="headerlink" title="Skip List"></a>Skip List</h2><p>在链表的基础上发展而来。</p>
-<p><strong>只能用于元素有序的情况</strong>，对标的是平衡树和二分查找，是一种 插入/删除/搜索 都是 $O(\log n)$ 的数据结构。</p>
-<p>添加第一级索引 —— 增加一个维度，索引指向 next+1 的元素。</p>
-<p>可以再增加第二级索引。等等多级索引。</p>
-<p>$O(\log n)$ 的查询时间复杂度: 索引的高度为 $\log(n)$. 每层索引遍历的结点个数为 $3$。</p>
-<p>维护成本高，增加或者删除都会更改索引。</p>
-<p>空间复杂度：$O(n)$</p>
-<h2 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li>5-10 分钟，读题和思考</li>
-<li>有思路：自己开始写代码；不然，马上看题解</li>
-<li>默写背诵题解，到熟练</li>
-<li>之后开始自己写，闭卷写</li>
-</ol>
-<h3 id="Move-zeros"><a href="#Move-zeros" class="headerlink" title="Move-zeros"></a>Move-zeros</h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给定一个数组 <code>nums</code>，编写一个函数将所有 $0$ 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">输入: [0,1,0,3,12]</span><br><span class="line">输出: [1,3,12,0,0]</span><br></pre></td></tr></table></figure>
-<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ol>
-<li>必须在原数组上操作，不能拷贝额外的数据</li>
-<li>尽量减少操作次数</li>
-</ol>
-<h4 id="解题过程与思路"><a href="#解题过程与思路" class="headerlink" title="解题过程与思路"></a>解题过程与思路</h4><ol>
-<li>Loop, count the number of zero</li>
-<li>new array, loop, 两个指针，非零往前放，0往后放</li>
-<li>直接在数组中进行 index 操作，loop 中记录非零元素的位置</li>
-<li>注意测试特殊情况</li>
-<li>五遍刷题法</li>
-<li>看别人的解法</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Coding</category>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>Geekbang Course</tag>
-        <tag>Interview Preparation</tag>
-      </tags>
   </entry>
 </search>

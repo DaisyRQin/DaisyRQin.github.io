@@ -28,7 +28,7 @@
 <meta property="og:description" content="Array泛型：任何一个单元类型都可以放进去。 数组：在内存中开辟了一段连续的地址。访问第一个和其中任何一个元素的时间复杂度都是一样的 $O(1)$，数组访问速度比较快。  Inserting：插入元素平均要挪动一半的元素位置，$O(n)$ 的时间复杂度。 Deleting：删除一处元素后要清理内存（自动 or 手动管理） Look up：$O(1)$. Linked List &#x2F; Chain对于">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-08T19:28:30.000Z">
-<meta property="article:modified_time" content="2020-04-08T21:20:20.211Z">
+<meta property="article:modified_time" content="2020-04-09T10:12:48.547Z">
 <meta property="article:author" content="Ray">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Geekbang Course">
@@ -219,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-04-08 20:28:30 / Modified: 22:20:20" itemprop="dateCreated datePublished" datetime="2020-04-08T20:28:30+01:00">2020-04-08</time>
+              <time title="Created: 2020-04-08 20:28:30" itemprop="dateCreated datePublished" datetime="2020-04-08T20:28:30+01:00">2020-04-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-09 11:12:48" itemprop="dateModified" datetime="2020-04-09T11:12:48+01:00">2020-04-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -326,7 +332,10 @@
     <a href="/2020/04/07/Complexity-Analysis/" rel="prev" title="Comlexity Analysis">
       <i class="fa fa-chevron-left"></i> Comlexity Analysis
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/09/Binary-Tree/" rel="next" title="Binary Tree">
+      Binary Tree <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -400,7 +409,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -511,6 +520,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
